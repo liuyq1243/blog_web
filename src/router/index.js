@@ -12,16 +12,16 @@ const routes = [
     path: '/404',
     component: ()=>import('@/views/errorPage/404.vue')
   },
-  // {
-  //   path: '/500',
-  //   name: '500',
-  //   component: ()=>import('../views/errorPage/500.vue')
-  // },
-  // {
-  //   path: '/502',
-  //   name: '502',
-  //   component: ()=>import('../views/errorPage/502.vue')
-  // },
+  {
+    path: '/500',
+    name: '500',
+    component: ()=>import('../views/errorPage/500.vue')
+  },
+  {
+    path: '/502',
+    name: '502',
+    component: ()=>import('../views/errorPage/502.vue')
+  },
 ]
 
 const router = createRouter({

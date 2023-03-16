@@ -1,14 +1,66 @@
 <template>
-  <div>FirstRecommend</div>
+  <div class="banner">
+    <el-carousel class="bannerBox" indicator-position="outside" >
+      <el-carousel-item  v-for="(list,index) in slideList" :key="index">
+            <img
+              style="width:100%; height:100%; display:block;cursor:pointer;"
+              v-if="list.photoList"
+              :src="list.photoList[0]"
+              :alt="list.title"
+              @click="goToInfo(list)">
+            <div class="carousel-title" @click="goToInfo(list)">
+              <span>{{list.title}}</span>
+            </div>
+      </el-carousel-item>
+    </el-carousel>
+  </div>
 </template>
 
 <script>
-  export default {
-    name: "FirstRecommend",
-    data() {
-
-    }
+import { getBlogByLevel } from "../../api/index";
+import {getBlogByUid} from "../../api/blogContent";
+export default {
+  name: "FirstRecommend",
+  data() {
+    return {
+      isShow: false, //控制左右滑动按钮是否显示
+      slideList: [],
+      currentIndex: 0,
+      timer: "",
+      firstData: [] //；一级推荐数据
+    };
+  },
+  created() {
+    var params = new URLSearchParams();
+    params.append("level", 1);
+    params.append("useSort", 1);
+    getBlogByLevel(params).then(response => {
+      if(response.code == this.$ECode.SUCCESS) {
+        this.slideList = response.data.records;
+      }
+    });
+  },
+  methods: {
+    //跳转到文章详情【或推广链接】
+    goToInfo(blog) {
+      if(blog.type == "0") {
+        let routeData = this.$router.resolve({
+          path: "/info",
+          query: {blogOid: blog.oid}
+        });
+        window.open(routeData.href, '_blank');
+      } else if(blog.type == "1") {
+        var params = new URLSearchParams();
+        params.append("uid", blog.uid);
+        getBlogByUid(params).then(response => {
+          // 记录一下用户点击日志
+          console.log(response)
+        });
+        window.open(blog.outsideLink, '_blank');
+      }
+    },
   }
+};
 </script>
 
 <style>

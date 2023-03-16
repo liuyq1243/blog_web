@@ -1,0 +1,3 @@
+let WEB_API='https://mock.presstime.cn/mock/640e7f01a1c7a972361759c5/blog'
+
+export default WEB_API
