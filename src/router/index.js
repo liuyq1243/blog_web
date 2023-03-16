@@ -4,12 +4,13 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    component: ()=>import('../views/blogIndex.vue')
+    children: [
+      {path: '/', component: ()=>import('../views/blogIndex.vue')},
+    ]
   },
   {
     path: '/404',
-    name: '404',
-    component: ()=>import('../views/errorPage/404.vue')
+    component: ()=>import('@/views/errorPage/404.vue')
   },
   // {
   //   path: '/500',
