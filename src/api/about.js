@@ -1,8 +1,9 @@
 import request from '@/utils/request'
+import WEB_API from "@/api/env";
 
 export function getMe (params) {
   return request({
-    url: process.env.WEB_API + '/about/getMe',
+    url: WEB_API + '/about/getMe',
     method: 'get',
     params
   })
@@ -10,7 +11,7 @@ export function getMe (params) {
 
 export function getContact (params) {
     return request({
-      url: process.env.WEB_API + '/about/getContact',
+      url: WEB_API + '/about/getContact',
       method: 'get',
       params
     })

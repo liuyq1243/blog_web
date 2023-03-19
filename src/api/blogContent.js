@@ -1,8 +1,9 @@
 import request from '@/utils/request'
+import WEB_API from "@/api/env";
 
 export function getBlogByUid (params) {
   return request({
-    url: process.env.WEB_API + '/content/getBlogByUid',
+    url: WEB_API + '/content/getBlogByUid',
     method: 'get',
     params
   })
@@ -10,7 +11,7 @@ export function getBlogByUid (params) {
 
 export function getSameBlogByTagUid (params) {
   return request({
-    url: process.env.WEB_API + '/content/getSameBlogByTagUid',
+    url: WEB_API + '/content/getSameBlogByTagUid',
     method: 'get',
     params
   })
@@ -18,7 +19,7 @@ export function getSameBlogByTagUid (params) {
 
 export function getSameBlogByBlogUid (params) {
   return request({
-    url: process.env.WEB_API + '/content/getSameBlogByBlogUid',
+    url: WEB_API + '/content/getSameBlogByBlogUid',
     method: 'get',
     params
   })
@@ -26,7 +27,7 @@ export function getSameBlogByBlogUid (params) {
 
 export function praiseBlogByUid (params) {
   return request({
-    url: process.env.WEB_API + '/content/praiseBlogByUid',
+    url: WEB_API + '/content/praiseBlogByUid',
     method: 'get',
     params
   })
@@ -34,7 +35,7 @@ export function praiseBlogByUid (params) {
 
 export function getBlogPraiseCountByUid (params) {
   return request({
-    url: process.env.WEB_API + '/content/getBlogPraiseCountByUid',
+    url: WEB_API + '/content/getBlogPraiseCountByUid',
     method: 'get',
     params
   })

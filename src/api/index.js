@@ -1,8 +1,9 @@
 import request from '@/utils/request'
+import WEB_API from "@/api/env";
 
 export function getBlogByLevel (params) {
   return request({
-    url: process.env.WEB_API + '/index/getBlogByLevel',
+    url: WEB_API + '/index/getBlogByLevel',
     method: 'get',
     params
   })
@@ -10,7 +11,7 @@ export function getBlogByLevel (params) {
 
 export function getNewBlog (params) {
   return request({
-    url: process.env.WEB_API + '/index/getNewBlog',
+    url: WEB_API + '/index/getNewBlog',
     method: 'get',
     params
   })
@@ -18,7 +19,7 @@ export function getNewBlog (params) {
 
 export function getBlogByTime (params) {
   return request({
-    url: process.env.WEB_API + '/index/getBlogByTime',
+    url: WEB_API + '/index/getBlogByTime',
     method: 'get',
     params
   })
@@ -26,7 +27,7 @@ export function getBlogByTime (params) {
 
 export function getHotBlog (params) {
   return request({
-    url: process.env.WEB_API + '/index/getHotBlog',
+    url: WEB_API + '/index/getHotBlog',
     method: 'get',
     params
   })
@@ -34,7 +35,7 @@ export function getHotBlog (params) {
 
 export function getHotTag (params) {
   return request({
-    url: process.env.WEB_API + '/index/getHotTag',
+    url: WEB_API + '/index/getHotTag',
     method: 'get',
     params
   })
@@ -42,7 +43,7 @@ export function getHotTag (params) {
 
 export function getLink (params) {
   return request({
-    url: process.env.WEB_API + '/index/getLink',
+    url: WEB_API + '/index/getLink',
     method: 'get',
     params
   })
@@ -50,7 +51,7 @@ export function getLink (params) {
 
 export function addLinkCount (params) {
   return request({
-    url: process.env.WEB_API + '/index/addLinkCount',
+    url: WEB_API + '/index/addLinkCount',
     method: 'get',
     params
   })
@@ -58,7 +59,7 @@ export function addLinkCount (params) {
 
 export function getWebConfig (params) {
   return request({
-    url: process.env.WEB_API + '/index/getWebConfig',
+    url: WEB_API + '/index/getWebConfig',
     method: 'get',
     params
   })
@@ -66,7 +67,7 @@ export function getWebConfig (params) {
 
 export function getWebNavbar (params) {
   return request({
-    url: process.env.WEB_API + '/index/getWebNavbar',
+    url: WEB_API + '/index/getWebNavbar',
     method: 'get',
     params
   })
@@ -74,7 +75,7 @@ export function getWebNavbar (params) {
 
 export function recorderVisitPage (params) {
   return request({
-    url: process.env.WEB_API + '/index/recorderVisitPage',
+    url: WEB_API + '/index/recorderVisitPage',
     method: 'get',
     params
   })

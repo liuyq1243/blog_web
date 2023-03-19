@@ -1,3 +1,4 @@
 let WEB_API='https://mock.presstime.cn/mock/640e7f01a1c7a972361759c5/blog'
+let SEARCH_API=''
 
-export default WEB_API
+export default {WEB_API, SEARCH_API}

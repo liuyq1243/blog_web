@@ -1,21 +1,13 @@
 <template>
   <div class="errPage-container">
-    <el-button @click="back" icon='arrow-left' class="pan-back-btn">返回</el-button>
     <el-row>
       <el-col :span="12">
         <h1 class="text-jumbo text-ginormous">Oops!</h1>
         <h2>您的请求过于频繁</h2>
         <h2>服务器徘徊在宕机的边缘....</h2>
         <h4>请稍后在尝试访问..</h4>
-        <ul class="list-unstyled">
-          <li>或者你可以去:</li>
-          <li class="link-type">
-            <router-link to="/">回首页</router-link>
-          </li>
-          <li class="link-type"><a href="https://gitee.com/moxi159753/mogu_blog_v2">蘑菇博客源码</a></li>
-          <li class="link-type"><a href="http://moxi159753.gitee.io/mogu_blog_doc">蘑菇博客文档</a></li>
-          <li><a @click.prevent="dialogVisible=true" href="#">点我看图</a></li>
-        </ul>
+        <router-link to="/">回首页</router-link>
+        <br>
       </el-col>
       <el-col :span="12">
         <img :src="errGif" width="313" height="428" alt="Girl has dropped her ice cream.">

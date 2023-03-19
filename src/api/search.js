@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+import {WEB_API, SEARCH_API} from "@/api/env";
 
 /**
  * 获取搜索模式
@@ -7,7 +8,7 @@ import request from '@/utils/request'
  */
 export function getSearchModel (params) {
   return request({
-    url: process.env.WEB_API + '/search/getSearchModel',
+    url: WEB_API + '/search/getSearchModel',
     method: 'get',
     params
   })
@@ -19,7 +20,7 @@ export function getSearchModel (params) {
  */
 export function searchBlog (params) {
   return request({
-    url: process.env.WEB_API + '/search/sqlSearchBlog',
+    url: WEB_API + '/search/sqlSearchBlog',
     method: 'get',
     params
   })
@@ -31,7 +32,7 @@ export function searchBlog (params) {
  */
 export function searchBlogByES (params) {
   return request({
-    url: process.env.SEARCH_API + '/search/elasticSearchBlog',
+    url: SEARCH_API + '/search/elasticSearchBlog',
     method: 'get',
     params
   })
@@ -43,7 +44,7 @@ export function searchBlogByES (params) {
  */
 export function searchBloBySolr (params) {
   return request({
-    url: process.env.SEARCH_API + '/search/solrSearchBlog',
+    url: SEARCH_API + '/search/solrSearchBlog',
     method: 'get',
     params
   })
@@ -51,7 +52,7 @@ export function searchBloBySolr (params) {
 
 export function searchBlogByTag (params) {
   return request({
-    url: process.env.WEB_API + '/search/searchBlogByTag',
+    url: WEB_API + '/search/searchBlogByTag',
     method: 'get',
     params
   })
@@ -59,7 +60,7 @@ export function searchBlogByTag (params) {
 
 export function searchBlogBySort (params) {
   return request({
-    url: process.env.WEB_API + '/search/searchBlogBySort',
+    url: WEB_API + '/search/searchBlogBySort',
     method: 'get',
     params
   })
@@ -67,7 +68,7 @@ export function searchBlogBySort (params) {
 
 export function searchBlogByAuthor (params) {
   return request({
-    url: process.env.WEB_API + '/search/searchBlogByAuthor',
+    url: WEB_API + '/search/searchBlogByAuthor',
     method: 'get',
     params
   })
