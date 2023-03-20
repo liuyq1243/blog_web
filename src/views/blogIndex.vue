@@ -2,6 +2,7 @@
   <article>
     <!--banner begin-->
     <div class="picsbox">
+      <web-header></web-header>
       <FirstRecommend></FirstRecommend>
       <!--banner end-->
 
@@ -44,12 +45,13 @@
 
   import FirstRecommend from "@/components/FirstRecommend/index.vue";
   import {getBlogByLevel} from "@/api/index";
+  import webHeader from "@/components/web-header.vue";
 
   export default {
     name: "blogIndex",
     components: {
-      FirstRecommend
-
+      FirstRecommend,
+      // webHeader
     },
     data() {
       return {
@@ -75,15 +77,15 @@
       this.loading = false;
     },
     created() {
-      var secondParams = new URLSearchParams();
-      secondParams.append("level", 2);
-      // 是否排序
-      secondParams.append("useSort", 1);
-      getBlogByLevel(secondParams).then(response => {
-        if(response.code == this.$ECode.SUCCESS) {
-          this.secondData = response.data.records;
-        }
-      });
+      // var secondParams = new URLSearchParams();
+      // secondParams.append("level", 2);
+      // // 是否排序
+      // secondParams.append("useSort", 1);
+      // getBlogByLevel(secondParams).then(response => {
+      //   if(response.code == this.$ECode.SUCCESS) {
+      //     this.secondData = response.data.records;
+      //   }
+      // });
     },
     methods: {
       //跳转到文章详情【或推广链接】

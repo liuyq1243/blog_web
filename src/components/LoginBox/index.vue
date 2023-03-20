@@ -29,7 +29,7 @@
 
         <div v-if="showPasswordLogin == false" style="text-align: center" class="block">
           <el-image :src="wechatOrCode" style="width: 250px;">
-            <div slot="error" class="image-slot" @click="refreshWechatCode">
+            <div class="image-slot" @click="refreshWechatCode">
               <i class="el-icon-refresh" style="height: 250px; line-height: 250px; cursor: pointer">点击刷新</i>
             </div>
           </el-image>
@@ -120,10 +120,11 @@
 
 <script>
   import {login, localLogin, localRegister, getWechatOrCodeTicket, getUserLoginStatus} from "@/api/user";
-  import { Loading } from 'element-ui';
   import {setCookie} from "@/utils/cookieUtils";
   import {mapMutations} from "vuex";
+  import {Loading} from "element-plus/es/components/loading/src/service";
   export default {
+    // eslint-disable-next-line vue/multi-word-component-names
     name: "share",
     data() {
       return {

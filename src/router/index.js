@@ -6,6 +6,7 @@ const routes = [
     name: 'Index',
     children: [
       {path: '/', component: ()=>import('../views/blogIndex.vue')},
+      {path: '/login', component: ()=>import('../views/login/index.vue')}
     ]
   },
   {
@@ -22,6 +23,11 @@ const routes = [
     name: '502',
     component: ()=>import('../views/errorPage/502.vue')
   },
+  {
+    path: '/*',
+    name: 'not_exist',
+    component: ()=>import('../views/errorPage/404.vue')
+  }
 ]
 
 const router = createRouter({

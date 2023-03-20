@@ -3,7 +3,7 @@ import router from '@/router/index'
 import {getCookie} from "@/utils/cookieUtils";
 // 创建axios实例
 const service = axios.create({
-  baseURL: '', // api 的 base_url
+  baseURL: 'https://mock.presstime.cn/mock/640e7f01a1c7a972361759c5/blog', // api 的 base_url
   timeout: 20000 // 请求超时时间 10秒
 })
 
